@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单示例页面</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">
+                <i class="fa fa-leaf mr-2"></i>简单网站
+            </h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="text-gray-700 hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-primary transition-colors">关于</a></li>
+                    <li><a href="#services" class="text-gray-700 hover:text-primary transition-colors">服务</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors">联系</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="py-16 md:py-24 bg-gradient-to-r from-primary/90 to-blue-400 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">欢迎来到简单网站</h2>
+            <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
+                这是一个简洁、美观且功能实用的示例页面
+            </p>
+            <button class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors">
+                了解更多
+            </button>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">关于我们</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/20/600/400" alt="关于我们" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">我们的故事</h3>
+                    <p class="text-gray-600 mb-4">
+                        我们是一个专注于提供简单解决方案的团队。我们相信，好的设计应该是简单且直观的，让用户能够轻松理解和使用。
+                    </p>
+                    <p class="text-gray-600">
+                        自成立以来，我们一直致力于为客户创造有价值的产品和服务，帮助他们实现业务目标。
+                    </p>
+                    <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-primary">5+</div>
+                            <div class="text-sm text-gray-500">年经验</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">50+</div>
+                            <div class="text-sm text-gray-500">客户</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">100+</div>
+                            <div class="text-sm text-gray-500">项目</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务区域 -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">我们的服务</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 服务项 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-code text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800">网站开发</h3>
+                    <p class="text-gray-600">创建响应式、高性能的网站，满足您的业务需求。</p>
+                </div>
+                <!-- 服务项 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-paint-brush text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800">设计服务</h3>
+                    <p class="text-gray-600">提供专业的设计服务，包括UI/UX设计和品牌设计。</p>
+                </div>
+                <!-- 服务项 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-mobile text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800">移动应用</h3>
+                    <p class="text-gray-600">开发功能丰富的移动应用，提升用户体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">联系我们</h2>
+            <div class="max-w-md mx-auto">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">留言</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors">
+                        发送消息
+                    </button>
+                </form>
+                <div class="mt-8 text-center">
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                            <i class="fa fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-600"><i class="fa fa-envelope-o mr-1"></i> contact@example.com</p>
+                    <p class="text-gray-600"><i class="fa fa-phone mr-1"></i> +86 123 4567 8910</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 简单网站. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 简单的JavaScript -->
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 表单提交处理
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitButton = this.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = '发送中...';
+                
+                // 模拟表单提交
+                setTimeout(() => {
+                    alert('消息已发送，感谢您的联系！');
+                    this.reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = '发送消息';
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
